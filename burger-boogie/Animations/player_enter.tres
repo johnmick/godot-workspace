@@ -1,0 +1,29 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "Walk In"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:z_index")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -1, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.9, 1.2, 1.5, 1.7, 2, 2.1, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 32, 54 ), Vector2( 32, 53 ), Vector2( 32, 52 ), Vector2( 32, 51 ), Vector2( 32, 50 ), Vector2( 32, 49 ), Vector2( 32, 48 ), Vector2( 32, 49 ), Vector2( 32, 50 ), Vector2( 32, 51 ), Vector2( 32, 52 ), Vector2( 32, 53 ) ]
+}

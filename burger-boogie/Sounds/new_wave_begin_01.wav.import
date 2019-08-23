@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/new_wave_begin_01.wav-df26b8c6f57d9359a99f49fe1b3c34b4.sample"
+
+[deps]
+
+source_file="res://Sounds/new_wave_begin_01.wav"
+dest_files=[ "res://.import/new_wave_begin_01.wav-df26b8c6f57d9359a99f49fe1b3c34b4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

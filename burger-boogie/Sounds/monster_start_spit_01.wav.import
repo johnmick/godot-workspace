@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/monster_start_spit_01.wav-344480a87613b5aa0d52ba319f809383.sample"
+
+[deps]
+
+source_file="res://Sounds/monster_start_spit_01.wav"
+dest_files=[ "res://.import/monster_start_spit_01.wav-344480a87613b5aa0d52ba319f809383.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

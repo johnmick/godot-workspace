@@ -1,0 +1,421 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/dance_floor.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/dance_floor_lights.tscn" type="PackedScene" id=2]
+
+[sub_resource type="NoiseTexture" id=1]
+
+[node name="dance_floor" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="dance_floor_sprite" parent="." instance=ExtResource( 2 )]
+position = Vector2( 32, 56 )
+
+[node name="Floor Outage Lights" type="Node2D" parent="."]
+position = Vector2( 0, -5 )
+
+[node name="outage_1" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 32.1995, 56.4649 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_2" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 27.098, 56.2495 )
+scale = Vector2( 0.00919065, 0.00826638 )
+texture = SubResource( 1 )
+
+[node name="outage_3" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 37.0173, 56.6538 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_4" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 37.1427, 60.4768 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_5" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 32.0662, 60.5395 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_6" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 27.1778, 60.5395 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_7" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 32.0662, 64.4879 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_8" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 27.0525, 64.4879 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_9" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 36.9547, 64.6132 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_10" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 41.5297, 56.4032 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_11" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 22.9788, 56.4032 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_12" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 21.976, 60.4142 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_13" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 42.2191, 60.4769 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_14" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 42.0878, 64.5109 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_15" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 22.2267, 64.6132 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_16" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 42.2191, 67.3081 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_17" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 22.039, 67.5028 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_18" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 36.9547, 67.328 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_19" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 27.3322, 67.5068 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_20" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 32.1289, 67.5068 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_21" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 18.034, 56.447 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_22" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 46.1823, 56.6549 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_23" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 46.4734, 60.4385 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_24" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 18.1587, 60.3138 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_25" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 17.1193, 64.5547 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_26" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 47.2633, 64.6379 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_27" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 46.9723, 67.7978 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_28" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 16.953, 68.1304 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_29" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 13.0502, 56.5353 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_30" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 51.2293, 56.6484 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_31" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 51.1728, 60.6077 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_32" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 12.9936, 60.438 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_33" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 52.1343, 64.6236 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_34" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 11.8624, 64.5105 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_35" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 12.0321, 68.2435 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_36" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 52.0212, 68.187 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_37" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 56.0371, 56.4222 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_38" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 8.1859, 56.5353 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_39" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 56.0371, 60.6643 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_40" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 7.90309, 60.438 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_41" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 7.33748, 64.2842 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_42" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 56.9986, 64.6801 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_43" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 7.11124, 68.4132 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_44" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 57.2249, 68.5263 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_45" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 60.2792, 56.309 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_46" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 3.83067, 56.309 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_47" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 4.11348, 60.438 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_48" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 60.2226, 60.6077 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_49" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 61.0145, 64.5105 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_50" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 3.15193, 64.6801 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_51" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 3.09537, 68.3001 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_52" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 61.5235, 68.7526 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_53" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 62.589, 56.5315 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_54" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 1.30219, 56.4655 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_55" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 63.3147, 60.4238 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_56" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 0.0487442, 60.4238 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_57" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 63.3147, 64.448 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )
+
+[node name="outage_58" type="Sprite" parent="Floor Outage Lights"]
+visible = false
+modulate = Color( 1, 1, 1, 0.901961 )
+position = Vector2( 0.378601, 64.2501 )
+scale = Vector2( 0.00919065, 0.00729188 )
+texture = SubResource( 1 )

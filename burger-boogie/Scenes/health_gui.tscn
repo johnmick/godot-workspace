@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/health_gui.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/symbols/heartt.png" type="Texture" id=2]
+
+[node name="health_gui" type="Node2D"]
+editor/display_folded = true
+position = Vector2( 57, 5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="heart_1" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="heart_2" type="Sprite" parent="."]
+position = Vector2( 0, 10 )
+texture = ExtResource( 2 )
+
+[node name="heart_3" type="Sprite" parent="."]
+position = Vector2( 0, 20 )
+texture = ExtResource( 2 )

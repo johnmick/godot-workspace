@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Symbols/burger.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Symbols/growth.tscn" type="PackedScene" id=2]
+
+
+
+[node name="GlyphSequence_Level1" type="Node2D"]
+
+[node name="Burger" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 25 )
+
+[node name="Growth" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 50 )
+
+[node name="Growth2" parent="." instance=ExtResource( 2 )]
