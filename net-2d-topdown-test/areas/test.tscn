@@ -72,7 +72,7 @@ __meta__ = {
 }
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 387.543, -193.541 )
+position = Vector2( 390.251, 74.5015 )
 
 [node name="camera" parent="." instance=ExtResource( 4 )]
 current = true
@@ -84,7 +84,7 @@ position = Vector2( 16, 72 )
 rotation = 1.5708
 
 [node name="enemies" parent="." instance=ExtResource( 3 )]
-tile_data = PoolIntArray( 131086, 0, 0 )
+tile_data = PoolIntArray( -720872, 0, 0, -720871, 0, 0, -655336, 0, 0, 131086, 0, 0 )
 
 [node name="key2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 256, 40 )

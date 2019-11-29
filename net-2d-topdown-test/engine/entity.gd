@@ -29,10 +29,6 @@ func movement_loop():
         motion = knockdir.normalized() * 125 
     
     move_and_slide(motion, DIR.CENTER)
-    
-    if NETWORK.configured:
-        #NETWORK.socketUDP.put_var(global_transform)
-        pass
 
 func spritedir_loop():
     match movedir:

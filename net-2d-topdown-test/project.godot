@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Zelda-like-tutorial"
+config/name="net-2d-topdown-test"
 run/main_scene="res://areas/test.tscn"
 
 [autoload]
