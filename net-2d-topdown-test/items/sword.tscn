@@ -4,7 +4,7 @@
 [ext_resource path="res://items/sword.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
-resource_name = "swingdown"
+resource_name = "down"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:z_index")
 tracks/0/interp = 1
@@ -43,7 +43,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-resource_name = "swingleft"
+resource_name = "left"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:z_index")
 tracks/0/interp = 1
@@ -82,7 +82,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=3]
-resource_name = "swingright"
+resource_name = "right"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:z_index")
 tracks/0/interp = 1
@@ -121,6 +121,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=4]
+resource_name = "up"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:z_index")
 tracks/0/interp = 1
@@ -162,16 +163,17 @@ tracks/2/keys = {
 extents = Vector2( 2, 6 )
 
 [node name="sword" type="Node2D"]
-position = Vector2( 0, -10 )
-z_index = -1
+position = Vector2( 10, 3 )
+rotation = 1.5708
+z_index = 1
 script = ExtResource( 2 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
 playback_speed = 4.0
-anims/swingdown = SubResource( 1 )
-anims/swingleft = SubResource( 2 )
-anims/swingright = SubResource( 3 )
-anims/swingup = SubResource( 4 )
+anims/down = SubResource( 1 )
+anims/left = SubResource( 2 )
+anims/right = SubResource( 3 )
+anims/up = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

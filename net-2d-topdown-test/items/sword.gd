@@ -1,18 +1,17 @@
 extends Node2D
 
-var TYPE = null
-var DAMAGE = 0.5
-
-var maxamount = 1
+var TYPE        = "PLAYER"
+var DAMAGE      = 0.5
+var SWORD_OWNER = null
+var DIRECTION   = null
 
 func _ready():
-    TYPE = get_parent().TYPE
+    SWORD_OWNER.state = "swing"
+    SWORD_OWNER.item_maxes["SWORD"]["NUM"] += 1
     $anim.connect("animation_finished", self, "destroy")
-    $anim.play(str("swing",get_parent().spritedir))
-    if get_parent().has_method("state_swing"):
-        get_parent().state = "swing"
+    $anim.play(DIRECTION)
     
 func destroy(animation):
-    if get_parent().has_method("state_swing"):
-        get_parent().state = "swing_cool"
+    SWORD_OWNER.state       = "swing_cool"
+    SWORD_OWNER.item_maxes["SWORD"]["NUM"] -= 1
     queue_free()

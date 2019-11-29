@@ -7,5 +7,9 @@ const UP     = Vector2(0,-1)
 const DOWN   = Vector2(0,1)
 
 const directions = [ LEFT, RIGHT, UP, DOWN ]
+const direction_names = [ "LEFT", "RIGHT", "UP", "DOWN" ]
 func rand():
     return directions[randi() % 4]
+
+func rand_name():
+    return direction_names[randi() % 4]

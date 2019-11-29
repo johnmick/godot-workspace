@@ -12,7 +12,10 @@ var movedir = DIR.CENTER
 var knockdir = DIR.CENTER
 var spritedir = "down"
 
-var active_item = preload("res://items/sword.tscn")
+var active_item = "SWORD"
+var item_maxes = {
+  "SWORD": { "MAX": 1, "NUM": 0 }
+}
 
 var hitstun = 0
 onready var texture_default = $Sprite.texture
@@ -21,7 +24,8 @@ onready var texture_hurt    = load($Sprite.texture.get_path().replace(".png", "_
 # Godot Procedures ------------------------------------------------------------------------
 func _physics_process(delta):
   if Input.is_action_just_pressed("a"):
-    use_item(active_item)
+    if item_maxes[active_item]["NUM"] < item_maxes[active_item]["MAX"]:
+      call(str("use_item_",active_item))
 
   match state:
     "default":
@@ -94,12 +98,6 @@ func movement_loop():
   move_and_slide(motion, DIR.CENTER)
 
 func spritedir_loop(facedir):
-    print(
-      "L:",  facedir == DIR.LEFT,
-      " R:", facedir == DIR.RIGHT,
-      " U:", facedir == DIR.UP,
-      " D:", facedir == DIR.DOWN
-    )
     match facedir:
         DIR.LEFT:
             spritedir = "left"
@@ -145,12 +143,9 @@ func anim_switch(animation):
     if $anim.current_animation != newanim:
         $anim.play(newanim)
         
-func use_item(item):
-    var newitem = item.instance()
-    newitem.add_to_group(str(item,self))
-    add_child(newitem)
-    if get_tree().get_nodes_in_group(str(item,self)).size() > newitem.maxamount:
-        newitem.queue_free()        
+func use_item_SWORD():
+  if item_maxes["SWORD"]["NUM"] < item_maxes["SWORD"]["MAX"]:
+    add_child( ITEMS.create_sword(self, spritedir) )
 
 func instance_scene(scene):
     var new_scene = scene.instance()

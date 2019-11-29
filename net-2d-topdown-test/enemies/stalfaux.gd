@@ -21,3 +21,4 @@ func _physics_process(delta):
     if movetimer == 0 || is_on_wall():
         movedir = DIR.rand()
         movetimer = movetimer_length
+        add_child( ITEMS.create_sword(self, DIR.rand_name().to_lower()) )

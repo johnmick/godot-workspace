@@ -27,6 +27,7 @@ run/main_scene="res://areas/test.tscn"
 
 DIR="*res://engine/directions.gd"
 NETWORK="*res://engine/network.gd"
+ITEMS="*res://engine/item_spawner.gd"
 
 [display]
 
