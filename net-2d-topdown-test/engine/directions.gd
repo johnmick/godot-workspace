@@ -9,6 +9,7 @@ const DOWN   = Vector2(0,1)
 const directions = [ LEFT, RIGHT, UP, DOWN ]
 const direction_names = [ "LEFT", "RIGHT", "UP", "DOWN" ]
 func rand():
+    var i = randi() % 4
     return directions[randi() % 4]
 
 func rand_name():

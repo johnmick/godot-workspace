@@ -108,6 +108,13 @@ func spritedir_loop(facedir):
         DIR.DOWN:
             spritedir = "down"    
 
+
+func damage(amount, source):
+    health -= amount
+    knockdir = global_transform.origin - source.global_transform.origin
+    hitstun = 10
+    $Sprite.texture = texture_hurt    
+
 func damage_loop():
     health = min(MAXHEALTH, health)
     
@@ -123,16 +130,16 @@ func damage_loop():
             instance_scene(preload("res://enemies/enemy_death.tscn"))                
             queue_free()
         
-    for area in $hitbox.get_overlapping_areas():
-        var body = area.get_parent()
-        
-        if area.has_method("toggle"):
-            area.toggle()
-            
-        if hitstun == 0 and body.get("DAMAGE") != null and body.get("TYPE") != TYPE:
-            health -= body.get("DAMAGE")
-            hitstun = 10
-            knockdir = global_transform.origin - body.global_transform.origin
+    #for area in $hitbox.get_overlapping_areas():
+    #    var body = area.get_parent()
+    #    
+    #    if area.has_method("toggle"):
+    #        area.toggle()
+    #        
+    #    if hitstun == 0 and body.get("DAMAGE") != null and body.get("TYPE") != TYPE:
+    #        health -= body.get("DAMAGE")
+    #        hitstun = 10
+    #        knockdir = global_transform.origin - body.global_transform.origin
 # -----------------------------------------------------------------------------------------
 
 
@@ -144,8 +151,8 @@ func anim_switch(animation):
         $anim.play(newanim)
         
 func use_item_SWORD():
-  if item_maxes["SWORD"]["NUM"] < item_maxes["SWORD"]["MAX"]:
-    add_child( ITEMS.create_sword(self, spritedir) )
+  add_child( ITEMS.create_sword(self, spritedir) ) 
+    
 
 func instance_scene(scene):
     var new_scene = scene.instance()
