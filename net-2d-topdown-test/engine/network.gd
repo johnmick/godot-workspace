@@ -1,8 +1,5 @@
 extends Node
 
-signal assign_net_uuid
-signal hello_udp
-
 var configured = false
 
 var network_uuid           = null
@@ -15,12 +12,10 @@ var socketTCP   = StreamPeerTCP.new()
 
 
 func _ready():
-    connect("assign_net_uuid", self, "assign_net_uuid")
-    connect("hello_udp", self, "hello_udp")
     if connect_tcp_client() == OK:
         print('TCP Connected')
     
-func _process(delta):
+func _process(_delta):
     if socketTCP.is_connected_to_host() == true and network_uuid_requested == false:
         request_network_uuid()
 
@@ -30,21 +25,17 @@ func _process(delta):
     if socketTCP.is_connected_to_host():
         if socketTCP.get_available_bytes() != 0:
             var msg = socketTCP.get_var()
-            emit_signal(msg["type"], msg)
+            print('[TCP] ', msg)
+            ROUTER.pub(msg["type"], msg)
             
     if socketUDP.get_available_packet_count() > 0:
         var msg = socketUDP.get_var()
-        print(msg)
-        emit_signal(msg["type"], msg)
-
-    #print(socketTCP.get_status())
-    #if socketTCP.get_status() in [0, 3]:
-    #    connect_tcp_client()
+        print('[UDP] ', msg)
+        ROUTER.pub(msg["type"], msg)
+        
 
 func connect_tcp_client():
     var status = socketTCP.connect_to_host(SERVER_IP, SERVER_PORT)
-    if status == OK:
-        socketTCP.set_no_delay(true)
 
     return status   
 
@@ -77,19 +68,3 @@ func hello_udp(msg):
 
 func _exit_tree():
     socketUDP.close()
-
-#var peer = null
-#var connected = false
-
-#func _ready():
-    #peer = NetworkedMultiplayerENet.new()
-    #peer.create_client('45.55.34.139', 4242)
-    #get_tree().set_network_peer(peer)
-    #get_tree().connect("network_peer_connected", self, "network_peer_connected")
-    
-#func network_peer_connected(id):
-#    connected = true
-#    print("Connected", id)
-    
-    
-    

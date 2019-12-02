@@ -28,6 +28,8 @@ run/main_scene="res://areas/test.tscn"
 DIR="*res://engine/directions.gd"
 NETWORK="*res://engine/network.gd"
 ITEMS="*res://engine/item_spawner.gd"
+ROUTER="*res://engine/router.gd"
+UTIL="*res://engine/util.gd"
 
 [display]
 

@@ -1,13 +1,11 @@
 extends Area2D
 
+# warning-ignore:unused_class_variable
 export (bool) var disappears = false
 
 func _ready():
-    connect("body_entered", self, "body_entered")
-    connect("area_entered", self, "area_entered")
-    
-#func body_entered(body):
-#    pass
+    UTIL.checked_connect(self, "body_entered", self, "body_entered")
+    UTIL.checked_connect(self, "area_entered", self, "area_entered")
     
 func area_entered(area):
     var area_parent = area.get_parent()

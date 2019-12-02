@@ -4,16 +4,18 @@ export (bool) var on_light = true
 
 var starting_speed = 3
 
+func sword_area_entered(msg):
+    if msg.area == $hitbox:
+        toggle()
+
+var sword_area_entered_ref = funcref(self, "sword_area_entered")
+
 func _ready():
-    $hitbox.connect("area_entered", self, "toggle") 
+    ROUTER.sub("sword_area_entered", sword_area_entered_ref)
     $anim.playback_speed = starting_speed
     $anim.play("default")
 
-func toggle(body):
-    
-    if (body.name == "hitbox" or body.get_parent().name == "camera"):
-        return
-    
+func toggle():  
     if on_light:
         $anim.playback_speed = 7.0
         $orb.modulate = Color(0.6, 1, 1, 1)

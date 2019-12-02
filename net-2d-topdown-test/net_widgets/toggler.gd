@@ -2,8 +2,6 @@ extends StaticBody2D
 
 export (bool) var on = true
 
-var TYPE = "toggler"
-
 func _ready():
     set_sprite()
 

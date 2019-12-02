@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var state = "default"
+# warning-ignore:unused_class_variable
 var TYPE  = "PLAYER"
 var keys  = 0
 var MAXHEALTH = 16
@@ -21,6 +22,17 @@ var hitstun = 0
 onready var texture_default = $Sprite.texture
 onready var texture_hurt    = load($Sprite.texture.get_path().replace(".png", "_hurt.png"))
 
+var sword_area_entered_ref = funcref(self, "sword_area_entered")
+
+func sword_area_entered(msg):
+    if msg.sword.OWNER != self and msg.area == $hitbox:
+        damage(msg.sword.DAMAGE, msg.sword)
+
+
+func _ready():
+    ROUTER.sub('sword_area_entered', sword_area_entered_ref)
+
+
 # Godot Procedures ------------------------------------------------------------------------
 func _physics_process(delta):
   if Input.is_action_just_pressed("a"):
@@ -29,16 +41,16 @@ func _physics_process(delta):
 
   match state:
     "default":
-      state_default()
+      state_default(delta)
     "swing":
-      state_swing()
+      state_swing(delta)
     "swing_cool":
-      state_swing_cool()
+      state_swing_cool(delta)
   keys = min(keys, 9)
 # -----------------------------------------------------------------------------------------
 
 # States ----------------------------------------------------------------------------------
-func state_default():
+func state_default(_delta):
     walking_loop()
     hitstun_loop()
     movement_loop()
@@ -60,7 +72,7 @@ func state_default():
         anim_switch("walk")
         
 var last_look = null
-func state_swing():
+func state_swing(_delta):
     anim_switch("idle")
     hitstun_loop()
     movement_loop()
@@ -76,7 +88,7 @@ func state_swing():
       last_look = DIR.DOWN
     movedir = DIR.CENTER
 
-func state_swing_cool():
+func state_swing_cool(_delta):
   spritedir_loop(last_look)
   last_look = null
   state = "default"
@@ -95,6 +107,7 @@ func hitstun_loop():
     motion = knockdir.normalized() * 125 
 
 func movement_loop():
+# warning-ignore:return_value_discarded
   move_and_slide(motion, DIR.CENTER)
 
 func spritedir_loop(facedir):
@@ -123,23 +136,6 @@ func damage_loop():
         $Sprite.texture = texture_hurt
     else:
         $Sprite.texture = texture_default
-        if TYPE == "ENEMY" and health <= 0:
-            var drop = randi() % 3
-            if drop == 0:
-                instance_scene(preload("res://pickups/heart.tscn"))
-            instance_scene(preload("res://enemies/enemy_death.tscn"))                
-            queue_free()
-        
-    #for area in $hitbox.get_overlapping_areas():
-    #    var body = area.get_parent()
-    #    
-    #    if area.has_method("toggle"):
-    #        area.toggle()
-    #        
-    #    if hitstun == 0 and body.get("DAMAGE") != null and body.get("TYPE") != TYPE:
-    #        health -= body.get("DAMAGE")
-    #        hitstun = 10
-    #        knockdir = global_transform.origin - body.global_transform.origin
 # -----------------------------------------------------------------------------------------
 
 
@@ -151,7 +147,15 @@ func anim_switch(animation):
         $anim.play(newanim)
         
 func use_item_SWORD():
-  add_child( ITEMS.create_sword(self, spritedir) ) 
+    var sword = ITEMS.create_sword(self, spritedir)
+    item_maxes["SWORD"]["NUM"] += 1
+    sword.connect("sword_gone", self, "my_sword_is_gone")
+    state = "swing"
+    add_child(sword)
+    
+func my_sword_is_gone():
+    state = "swing_cool"
+    item_maxes["SWORD"]["NUM"] -= 1
     
 
 func instance_scene(scene):

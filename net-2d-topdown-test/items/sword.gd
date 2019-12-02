@@ -1,23 +1,24 @@
 extends Node2D
 
-var TYPE        = "SWORD"
-var DAMAGE      = 0.5
-var SWORD_OWNER = null
-var DIRECTION   = null
+# warning-ignore:unused_class_variable
+var DAMAGE    = 0.5
+# warning-ignore:unused_class_variable
+var OWNER     = null
+var DIRECTION = null
+
+signal sword_gone
 
 func _ready():
-    SWORD_OWNER.state = "swing"
-    SWORD_OWNER.item_maxes["SWORD"]["NUM"] += 1
-    $anim.connect("animation_finished", self, "destroy")
+    UTIL.checked_connect($anim, "animation_finished", self, "destroy")
+    UTIL.checked_connect($area, "area_entered", self, "area_entered")
     $anim.play(DIRECTION)
     
-    $area.connect("area_entered", self, "area_entered")
-    
 func area_entered(area):
-    if area.get_parent() != SWORD_OWNER and area.get_parent().has_method("damage"):
-        area.get_parent().damage(DAMAGE, self)
+    ROUTER.pub('sword_area_entered', {
+        "sword": self,
+        "area":  area    
+    })
     
-func destroy(animation):
-    SWORD_OWNER.state       = "swing_cool"
-    SWORD_OWNER.item_maxes["SWORD"]["NUM"] -= 1
+func destroy(_animation):
+    emit_signal("sword_gone")
     queue_free()

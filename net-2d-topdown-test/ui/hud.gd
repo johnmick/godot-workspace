@@ -12,7 +12,7 @@ func _ready():
         new_heart.hframes = $hearts.hframes
         $hearts.add_child(new_heart)
 
-func _process(delta):
+func _process(_delta):
     var last_heart = floor(player.health)
     
     for heart in $hearts.get_children():
