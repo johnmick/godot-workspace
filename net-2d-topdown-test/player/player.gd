@@ -39,6 +39,7 @@ func _physics_process(delta):
     if item_maxes[active_item]["NUM"] < item_maxes[active_item]["MAX"]:
       call(str("use_item_",active_item))
 
+  var old_pos = global_transform.origin
   match state:
     "default":
       state_default(delta)
@@ -46,6 +47,8 @@ func _physics_process(delta):
       state_swing(delta)
     "swing_cool":
       state_swing_cool(delta)
+  if old_pos != global_transform.origin:
+    NETWORK.send_msg({"type": "player_moved", "position": global_transform.origin})
   keys = min(keys, 9)
 # -----------------------------------------------------------------------------------------
 

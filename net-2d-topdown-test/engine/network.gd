@@ -10,10 +10,13 @@ var SERVER_PORT = 4242
 var socketUDP   = PacketPeerUDP.new()
 var socketTCP   = StreamPeerTCP.new()
 
+var assign_net_uuid_ref = funcref(self, "assign_net_uuid")
 
 func _ready():
+    ROUTER.sub("assign_net_uuid", assign_net_uuid_ref)
     if connect_tcp_client() == OK:
         print('TCP Connected')
+    
     
 func _process(_delta):
     if socketTCP.is_connected_to_host() == true and network_uuid_requested == false:
@@ -60,11 +63,17 @@ func request_network_uuid():
     socketTCP.put_var({"type": "net_request_id"})
     network_uuid_requested = true
 
-func assign_net_uuid(net_uuid):
-    network_uuid = net_uuid
+func assign_net_uuid(msg):
+    network_uuid = msg["net_uuid"]
     
 func hello_udp(msg):
     print('Hello incoming UDP', msg)
 
 func _exit_tree():
     socketUDP.close()
+
+func send_msg(msg):
+    if network_uuid == null:
+        return 
+    msg["net_uuid"] = network_uuid
+    socketTCP.put_var(msg)

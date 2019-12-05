@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="net-2d-topdown-test"
-run/main_scene="res://areas/test.tscn"
+run/main_scene="res://areas/server_clock_test.tscn"
 
 [autoload]
 
@@ -30,6 +30,7 @@ NETWORK="*res://engine/network.gd"
 ITEMS="*res://engine/item_spawner.gd"
 ROUTER="*res://engine/router.gd"
 UTIL="*res://engine/util.gd"
+WORLD="*res://engine/world.gd"
 
 [display]
 
