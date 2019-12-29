@@ -5,7 +5,7 @@ var state = "default"
 var TYPE  = "PLAYER"
 var keys  = 0
 var MAXHEALTH = 16
-var SPEED = 70
+var SPEED = 80
 var health = MAXHEALTH
 
 var motion = DIR.CENTER

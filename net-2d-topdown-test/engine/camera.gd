@@ -6,9 +6,9 @@ func _ready():
     UTIL.checked_connect($area, "area_exited", self, "area_exited")
 
 func _process(_delta):
-    var pos = get_node("../player").global_position - Vector2(0, 16)
-    var x = floor(pos.x / 160) * 160
-    var y = floor(pos.y / 128) * 128 # 144 - 16
+    var pos = get_node("../player").global_position - Vector2(0, 32)
+    var x = floor(pos.x / 320) * 320
+    var y = floor(pos.y / 256) * 256 # 144 - 16
     global_position = Vector2(x,y)
 
 func body_entered(body):
