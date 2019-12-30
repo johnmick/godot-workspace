@@ -7,5 +7,6 @@ func _ready():
         var name = get_tileset().tile_get_name(get_cell(tile.x, tile.y))
         var node = load(str("res://enemies/", name, ".tscn")).instance()
         node.global_position = tile * size + offset
+        node.set_scale(Vector2(1.5,1.5))
         get_parent().call_deferred("add_child", node)
     queue_free()
