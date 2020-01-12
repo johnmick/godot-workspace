@@ -1,0 +1,161 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://wildlife/bluejay.png" type="Texture" id=1]
+[ext_resource path="res://wildlife/running_bluejay.png" type="Texture" id=2]
+[ext_resource path="res://world_things/bluejay.gd" type="Script" id=3]
+[ext_resource path="res://wildlife/bluejay_peck.png" type="Texture" id=4]
+[ext_resource path="res://wildlife/bluejay_struck.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "standing"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.0195602, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "standing"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.0195602, 0.1, 0.200023 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "running"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.19821 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "walking"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "struck"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.000604913, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 6.24905
+height = 0.632706
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 4.40881, 3.50742 )
+
+[node name="bluejay" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="standing" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="standing"]
+autoplay = "standing"
+anims/standing = SubResource( 1 )
+
+[node name="peck" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+vframes = 3
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="peck"]
+autoplay = "standing"
+anims/standing = SubResource( 5 )
+
+[node name="running" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+vframes = 3
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="running"]
+autoplay = "running"
+anims/running = SubResource( 2 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="running"]
+anims/walking = SubResource( 3 )
+
+[node name="struck" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+vframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="struck"]
+autoplay = "struck"
+anims/struck = SubResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hitbox" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+visible = false
+shape = SubResource( 7 )
