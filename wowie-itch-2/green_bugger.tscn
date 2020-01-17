@@ -19,8 +19,9 @@ tracks/0/keys = {
 "values": [ 0, 2 ]
 }
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7.67193, 3.22647 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 2.96281
+height = 0.59277
 
 [node name="green_bugger" type="KinematicBody2D"]
 script = ExtResource( 2 )

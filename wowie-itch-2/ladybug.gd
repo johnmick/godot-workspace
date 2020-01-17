@@ -14,7 +14,7 @@ var MOUSE_LOOK    = false
 func _ready():
     pass # Replace with function body.
 
-func _process(delta):
+func _physics_process(delta):
     var player_delta = Vector2(0,0)
     if SMOOTH_MOTION:
         if Input.is_action_pressed("ui_up"):
