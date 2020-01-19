@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://spawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://bg_1.png" type="Texture" id=2]
+[ext_resource path="res://test_scene.gd" type="Script" id=3]
+[ext_resource path="res://bg_2.png" type="Texture" id=4]
+[ext_resource path="res://bg_3.png" type="Texture" id=5]
+[ext_resource path="res://big_ant.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Camera2D.gd" type="Script" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "default_bg1"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 3, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "bg_3"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 4.8, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.721569 ), Color( 1, 1, 1, 0.368627 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="test_scene" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="bg_2" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="bg_1" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bg_1"]
+autoplay = "default_bg1"
+anims/default_bg1 = SubResource( 1 )
+
+[node name="spawner" parent="." instance=ExtResource( 1 )]
+position = Vector2( 320, 10 )
+
+[node name="bg_3" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.0361032 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bg_3"]
+autoplay = "bg_3"
+anims/bg_3 = SubResource( 2 )
+
+[node name="big_ant5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 274.745, -97.4212 )
+rotation = 1.5708
+scale = Vector2( 1, 10 )
+
+[node name="big_ant8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 229.785, 437.459 )
+rotation = 1.5708
+scale = Vector2( 1, 10 )
+
+[node name="big_ant6" parent="." instance=ExtResource( 6 )]
+position = Vector2( -79, 117 )
+scale = Vector2( 1, 10 )
+
+[node name="big_ant7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 718, 158 )
+scale = Vector2( 1, 10 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 7 )

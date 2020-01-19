@@ -1,0 +1,351 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://grass.jpg" type="Texture" id=1]
+[ext_resource path="res://wall_emitter.gd" type="Script" id=2]
+[ext_resource path="res://paddle.gd" type="Script" id=3]
+[ext_resource path="res://paddle.png" type="Texture" id=4]
+[ext_resource path="res://ant_home.png" type="Texture" id=5]
+[ext_resource path="res://ball_capture.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 34.0002, 370.268 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 361.984, 81.6011 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "anthome"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 3 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "anthome"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 3 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "anthome"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 3 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "anthome"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 3 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "anthome"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 3 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "anthome"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 3 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "anthome"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 3 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "anthome"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 3 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "anthome"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 3 ]
+}
+
+[node name="breakout" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.619608 )
+position = Vector2( -2.45239, -58.4475 )
+scale = Vector2( 1.05, 1.05 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="wall_emitter" type="Node2D" parent="."]
+position = Vector2( 4.88711, 184.455 )
+script = ExtResource( 2 )
+spawn_interval = 2.5
+
+[node name="wall_emitter4" type="Node2D" parent="."]
+position = Vector2( 3.65936, 120.612 )
+script = ExtResource( 2 )
+spawn_interval = 3.5
+linear_velocity_x = 75
+linear_velocity_y = -150
+
+[node name="wall_emitter2" type="Node2D" parent="."]
+position = Vector2( 631.243, 182.826 )
+script = ExtResource( 2 )
+spawn_interval = 3.0
+linear_velocity_x = -50
+
+[node name="wall_emitter3" type="Node2D" parent="."]
+position = Vector2( 630.015, 148.449 )
+script = ExtResource( 2 )
+spawn_interval = 4.75
+linear_velocity_x = -75
+linear_velocity_y = -150
+
+[node name="paddle" type="RigidBody2D" parent="."]
+position = Vector2( 278.561, 335.577 )
+mode = 2
+mass = 6687.24
+gravity_scale = 0.0
+linear_damp = 10.0
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="paddle"]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 50, 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="paddle"]
+visible = false
+polygon = PoolVector2Array( -24.5559, 9.4814, -24.7264, -1.94312, -6.99284, -9.70157, 7.84199, -9.70157, 24.382, -1.1758, 24.5525, 9.73717 )
+
+[node name="walls" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="walls"]
+position = Vector2( 34.2177, 15.7856 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D"]
+position = Vector2( -67.4588, 142.155 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="walls"]
+position = Vector2( 741.154, 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D2"]
+position = Vector2( -67.4588, 142.155 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="walls"]
+position = Vector2( 452.15, 7.13605 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D3"]
+position = Vector2( -40.5801, 138.083 )
+shape = SubResource( 1 )
+
+[node name="ball_capture" type="StaticBody2D" parent="walls"]
+position = Vector2( 2.45551, 72.4366 )
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/ball_capture"]
+position = Vector2( 300.277, 387.812 )
+shape = SubResource( 2 )
+
+[node name="ant_home1" type="Node2D" parent="."]
+position = Vector2( 49.7942, 32.8539 )
+
+[node name="Sprite" type="Sprite" parent="ant_home1"]
+texture = ExtResource( 5 )
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ant_home1/Sprite"]
+autoplay = "anthome"
+anims/anthome = SubResource( 3 )
+
+[node name="ant_home2" type="Node2D" parent="."]
+position = Vector2( 216.125, 65.4342 )
+
+[node name="Sprite" type="Sprite" parent="ant_home2"]
+texture = ExtResource( 5 )
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ant_home2/Sprite"]
+autoplay = "anthome"
+anims/anthome = SubResource( 4 )
+
+[node name="ant_home3" type="Node2D" parent="."]
+position = Vector2( 395.316, 34.5687 )
+
+[node name="Sprite" type="Sprite" parent="ant_home3"]
+texture = ExtResource( 5 )
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ant_home3/Sprite"]
+autoplay = "anthome"
+anims/anthome = SubResource( 5 )
+
+[node name="ant_home4" type="Node2D" parent="."]
+position = Vector2( 543.642, 61.1473 )
+
+[node name="Sprite" type="Sprite" parent="ant_home4"]
+texture = ExtResource( 5 )
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ant_home4/Sprite"]
+autoplay = "anthome"
+anims/anthome = SubResource( 6 )
+
+[node name="ant_home5" type="Node2D" parent="."]
+position = Vector2( 287.045, 35.3648 )
+
+[node name="Sprite" type="Sprite" parent="ant_home5"]
+texture = ExtResource( 5 )
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ant_home5/Sprite"]
+autoplay = "anthome"
+anims/anthome = SubResource( 7 )
+
+[node name="ant_home6" type="Node2D" parent="."]
+position = Vector2( 128.667, 37.8203 )
+
+[node name="Sprite" type="Sprite" parent="ant_home6"]
+texture = ExtResource( 5 )
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ant_home6/Sprite"]
+autoplay = "anthome"
+anims/anthome = SubResource( 8 )
+
+[node name="ant_home7" type="Node2D" parent="."]
+position = Vector2( 469.978, 53.7809 )
+
+[node name="Sprite" type="Sprite" parent="ant_home7"]
+texture = ExtResource( 5 )
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ant_home7/Sprite"]
+autoplay = "anthome"
+anims/anthome = SubResource( 9 )
+
+[node name="ant_home8" type="Node2D" parent="."]
+position = Vector2( 601.346, 23.0874 )
+
+[node name="Sprite" type="Sprite" parent="ant_home8"]
+texture = ExtResource( 5 )
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ant_home8/Sprite"]
+autoplay = "anthome"
+anims/anthome = SubResource( 10 )
+
+[node name="ant_home9" type="Node2D" parent="."]
+position = Vector2( 600.118, 116.396 )
+
+[node name="Sprite" type="Sprite" parent="ant_home9"]
+texture = ExtResource( 5 )
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ant_home9/Sprite"]
+autoplay = "anthome"
+anims/anthome = SubResource( 11 )
