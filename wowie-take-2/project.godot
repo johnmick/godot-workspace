@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="wowie-v2"
-run/main_scene="res://breakout.tscn"
+config/name="Don't Let the Bed Bugs Bite"
+run/main_scene="res://bed.tscn"
 config/icon="res://icon.png"
 
 [display]

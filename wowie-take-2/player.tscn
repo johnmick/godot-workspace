@@ -1,0 +1,127 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://sleepr/right_arm.png" type="Texture" id=1]
+[ext_resource path="res://sleepr/left_arm.png" type="Texture" id=2]
+[ext_resource path="res://sleepr/body.png" type="Texture" id=3]
+[ext_resource path="res://sleepr/right_leg.png" type="Texture" id=4]
+[ext_resource path="res://sleepr/left_leg.png" type="Texture" id=5]
+[ext_resource path="res://player.gd" type="Script" id=6]
+[ext_resource path="res://leg_right_animation.tres" type="Animation" id=7]
+[ext_resource path="res://arm_right_animation.tres" type="Animation" id=8]
+[ext_resource path="res://leg_left_animation.tres" type="Animation" id=9]
+[ext_resource path="res://hello.wav" type="AudioStream" id=10]
+
+[sub_resource type="Animation" id=1]
+resource_name = "arm_left_animation"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -32.6743, 16.0933 ), Vector2( -38.5265, 4.3891 ), Vector2( -32.6743, 16.0933 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 63.9, 0.0 ]
+}
+
+[node name="player" type="Node2D"]
+position = Vector2( 328.519, 112.358 )
+script = ExtResource( 6 )
+
+[node name="arm_left" type="KinematicBody2D" parent="."]
+position = Vector2( -32.6743, 16.0933 )
+
+[node name="Sprite" type="Sprite" parent="arm_left"]
+position = Vector2( -41.4507, 11.0586 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="arm_left/Sprite"]
+anims/arm_left_animation = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="arm_left"]
+visible = false
+position = Vector2( 30.8668, -16.291 )
+polygon = PoolVector2Array( -32.2934, 30.0083, -116.661, 49.5153, -123.977, 32.9343, -103.982, 23.1808, -18.1508, 2.69838 )
+
+[node name="arm_right" type="KinematicBody2D" parent="."]
+position = Vector2( 32.1867, 14.6303 )
+
+[node name="Sprite" type="Sprite" parent="arm_right"]
+position = Vector2( 46.3114, 3.34186 )
+texture = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="arm_right/Sprite"]
+"anims/New Anim" = ExtResource( 8 )
+anims/arm_right_animation = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="arm_right"]
+visible = false
+position = Vector2( -29.9871, -14.9876 )
+polygon = PoolVector2Array( 19.888, 26.5945, 96.4532, 33.422, 122.788, 33.9097, 125.226, 6.59979, 99.8669, 6.11212, 22.814, 3.18605 )
+
+[node name="leg_left" type="KinematicBody2D" parent="."]
+position = Vector2( -26.478, 43.343 )
+rotation = -0.101229
+
+[node name="Sprite" type="Sprite" parent="leg_left"]
+position = Vector2( -17.8319, 30.8006 )
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="leg_left/Sprite"]
+autoplay = "N2ew Anim"
+"anims/N2ew Anim" = ExtResource( 9 )
+anims/leg_left_animation = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leg_left"]
+visible = false
+polygon = PoolVector2Array( -9.5137, -7.06943, -45.0529, 51.2694, -14.6132, 59.6207, 15.2169, -1.85544 )
+
+[node name="leg_right" type="KinematicBody2D" parent="."]
+position = Vector2( 14.3369, 48.9814 )
+rotation = 0.790634
+
+[node name="Sprite" type="Sprite" parent="leg_right"]
+position = Vector2( 22.8926, 33.919 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="leg_right/Sprite"]
+"anims/New Anim" = ExtResource( 7 )
+anims/leg_right_animation = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leg_right"]
+visible = false
+polygon = PoolVector2Array( -9.30365, 7.9613, 17.3345, 67.6611, 44.7899, 60.2153, 11.6342, -0.708908 )
+
+[node name="body" type="KinematicBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="body"]
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="body/Sprite"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="body"]
+visible = false
+polygon = PoolVector2Array( -12.7863, 47.5646, -39.6086, 46.5892, -40.0962, 6.59979, -7.90958, 0.259995, 31.5922, 4.16141, 15.9865, 28.0576, 23.3017, 54.8797 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="body"]
+visible = false
+polygon = PoolVector2Array( -18.1508, 0.259995, -35.7071, -17.784, -33.7564, -37.7787, -11.811, -52.409, 4.76999, -51.4337, 16.9619, -34.8527, 17.9373, -13.3949, 5.74536, 0.747681 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+volume_db = -10.0

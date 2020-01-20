@@ -14,7 +14,7 @@ func _ready():
 
 
 var gonna_leave = false
-var leave_time  = .15
+var leave_time  = 1
 var leave_timer = 0
 
 var waking_up_time  = .5
@@ -38,10 +38,23 @@ func _physics_process(delta):
     if waking_up_timer < waking_up_time: 
         return
     
+    if gonna_leave:
+        scale = scale * 1.5
+        return
+    
     for body in get_colliding_bodies():
+        if body.get_parent().name == "player":
+            if body.get_node("Sprite/AnimationPlayer").is_playing() and body.get_node("Sprite/AnimationPlayer").current_animation_position < .3:
+                gonna_leave()
+                body.get_parent().score += int(rand_range(1,4))
+            else:
+                body.get_parent().health -= 1
+                body.get_parent().modulate += Color(1.0, -.1, -.1, 0)
+        if "ant" in body.name:
+            gonna_leave()
         if "wall" in body.name:
             gonna_leave()
-            body.gonna_leave()
+            #body.gonna_leave()
             body.get_node("BiteSound").pitch_scale = rand_range(.9, 1.1)
             body.get_node("BiteSound").play()
         if "paddle" == body.name:
@@ -52,5 +65,6 @@ func _physics_process(delta):
         if "ball_capture" == body.name:
             scale = Vector2(randf() * 15, randf() * 15)
             add_force(Vector2.ZERO, Vector2((randf() - .5) * 2000, (randf() - .5) * 2000))
-            leave_time = randf() * 5 + .5
+            #leave_time = randf() * 5 + .5
+            leave_time = randf() * 2 + .5
             gonna_leave()

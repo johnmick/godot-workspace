@@ -45,12 +45,12 @@ var MOVE_SPEED =   100
 func _input(event):
     #if shoot_timer > shoot_interval and Input.is_action_just_pressed("left_click"):
     #if shoot_timer > shoot_interval and Input.is_action_pressed("left_click"):
-    #if Input.is_action_pressed("left_click"):
-    #    for x in range(5):
-    #        make_ant()
-    #    for x in range(10):
-    #        make_ball()       
-    #    shoot_timer = 0
+    if Input.is_action_pressed("left_click"):
+        for x in range(50):
+            make_ant()
+        #for x in range(10):
+        #    make_ball()       
+        shoot_timer = 0
     pass
     
 var spawn_interval = 5
@@ -60,13 +60,13 @@ var linear_velocity = Vector2.ZERO
 func _process(delta):
     var player_delta = Vector2.ZERO
     spawn_timer += delta
-    if spawn_timer > spawn_interval:
-        position = Vector2(rand_range(20, 600), rand_range(30, 40) * -1)
-        for x in range(5):
-            make_ant()
-        for x in range(50):
-            make_ball()          
-        spawn_timer = 0
+    #if spawn_timer > spawn_interval:
+    #    position = Vector2(rand_range(20, 600), rand_range(30, 40) * -1)
+    #    for x in range(5):
+    #        make_ant()
+    #    for x in range(50):
+    #        make_ball()          
+    #    spawn_timer = 0
     if Input.is_action_pressed("ui_up"):
         player_delta.y -= MOVE_SPEED * delta
     if Input.is_action_pressed("ui_down"):

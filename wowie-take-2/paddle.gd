@@ -18,7 +18,7 @@ var mouse_speed = Vector2.ZERO
 func _input(event):
     if event is InputEventMouseMotion:
         if abs(event.relative[0]) > 1:
-            mouse_speed = Vector2(event.relative[0] * 50, 0)
+            mouse_speed = Vector2(event.relative[0] * 50, event.relative[1] * 50)
 
 func _integrate_forces(state):
     state.set_linear_velocity(mouse_speed)

@@ -7,15 +7,15 @@ extends RigidBody2D
 onready var busted_texture = preload("res://busted_ball.png")
 onready var ant_scene = preload("res://ant.tscn")
 onready var ant_home_positions  = [
-    get_node("../../ant_home1").position,
-    get_node("../../ant_home2").position,
-    get_node("../../ant_home3").position,
-    get_node("../../ant_home4").position,
-    get_node("../../ant_home5").position,
-    get_node("../../ant_home6").position,
-    get_node("../../ant_home7").position,
-    get_node("../../ant_home8").position,
-    get_node("../../ant_home9").position,
+    #get_node("../../ant_home1").position,
+    #get_node("../../ant_home2").position,
+    #get_node("../../ant_home3").position,
+    #get_node("../../ant_home4").position,
+    #get_node("../../ant_home5").position,
+    #get_node("../../ant_home6").position,
+    #get_node("../../ant_home7").position,
+    #get_node("../../ant_home8").position,
+    #get_node("../../ant_home9").position,
 ]
 onready var ant_parent = get_node("/root/breakout")
 
@@ -27,7 +27,7 @@ func _ready():
 
 
 var gonna_leave = false
-var leave_time  = .75
+var leave_time  = 2.75
 var leave_timer = 0
 func _process(delta):
     if gonna_leave:
@@ -47,12 +47,14 @@ func _physics_process(delta):
             #body.gonna_leave()
             pass
         if "ball_capture" == body.name:
-            var ant = ant_scene.instance()
-            ant.position = ant_home_positions[randi() % len(ant_home_positions)]
-            ant.linear_velocity = Vector2((randf() - .5) * 50, -randf() * 200)
-            ant_parent.add_child(ant)
+            for x in range(20):
+                var ant = ant_scene.instance()
+                ant.position = ant_home_positions[randi() % len(ant_home_positions)]
+                ant.linear_velocity = Vector2((randf() - .5) * 5000, -randf() * 2000)
+                ant_parent.add_child(ant)
             queue_free()
         if "paddle" == body.name:
+            add_force(Vector2.ZERO, Vector2(0, -100))
             gonna_leave()
         
         if "ant" in body.name:
