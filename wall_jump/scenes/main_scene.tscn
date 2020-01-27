@@ -45,55 +45,54 @@ position = Vector2( 290.421, 183.117 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk"]
 position = Vector2( 788.411, 12.1709 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk"]
 position = Vector2( 980.052, 12.2944 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk"]
 position = Vector2( 229.077, 7.99297 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk"]
 position = Vector2( 43.7341, 6.19193 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk"]
 position = Vector2( 608.216, 10.3495 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk"]
 position = Vector2( 418.237, 13.0569 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk"]
 position = Vector2( -329.534, 10.0469 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk"]
 position = Vector2( -508.077, 8.98122 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk"]
 position = Vector2( -135.711, 5.79883 )
 frames = SubResource( 1 )
-frame = 5
 playing = true
 
 [node name="Starfield_Chunk4" type="Node2D" parent="world/Starfield"]
@@ -102,54 +101,55 @@ position = Vector2( 1687.65, 0.00012207 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk4"]
 position = Vector2( 788.411, 12.1709 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk4"]
 position = Vector2( 980.052, 12.2944 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk4"]
 position = Vector2( 229.077, 7.99297 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk4"]
 position = Vector2( 43.7341, 6.19193 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk4"]
 position = Vector2( 608.216, 10.3495 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk4"]
 position = Vector2( 418.237, 13.0569 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk4"]
 position = Vector2( -329.534, 10.0469 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk4"]
 position = Vector2( -508.077, 8.98122 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk4"]
 position = Vector2( -135.711, 5.79883 )
 frames = SubResource( 1 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="Starfield_Chunk2" type="Node2D" parent="world/Starfield"]
@@ -158,54 +158,55 @@ position = Vector2( -1203.48, 3.73425 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk2"]
 position = Vector2( 788.411, 12.1709 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk2"]
 position = Vector2( 980.052, 12.2944 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk2"]
 position = Vector2( 229.077, 7.99297 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk2"]
 position = Vector2( 43.7341, 6.19193 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk2"]
 position = Vector2( 608.216, 10.3495 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk2"]
 position = Vector2( 418.237, 13.0569 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk2"]
 position = Vector2( -329.534, 10.0469 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk2"]
 position = Vector2( -508.077, 8.98122 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk2"]
 position = Vector2( -135.711, 5.79883 )
 frames = SubResource( 1 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="Starfield_Chunk3" type="Node2D" parent="world/Starfield"]
@@ -214,54 +215,55 @@ position = Vector2( -2826.98, -7.42383 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk3"]
 position = Vector2( 788.411, 12.1709 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk3"]
 position = Vector2( 980.052, 12.2944 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk3"]
 position = Vector2( 229.077, 7.99297 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk3"]
 position = Vector2( 43.7341, 6.19193 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk3"]
 position = Vector2( 608.216, 10.3495 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk3"]
 position = Vector2( 418.237, 13.0569 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk3"]
 position = Vector2( -329.534, 10.0469 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk3"]
 position = Vector2( -508.077, 8.98122 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk3"]
 position = Vector2( -135.711, 5.79883 )
 frames = SubResource( 1 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="Starfield_Chunk8" type="Node2D" parent="world/Starfield"]
@@ -270,54 +272,55 @@ position = Vector2( -50.2112, -161.792 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk8"]
 position = Vector2( 788.411, 12.1709 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk8"]
 position = Vector2( 980.052, 12.2944 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk8"]
 position = Vector2( 229.077, 7.99297 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk8"]
 position = Vector2( 43.7341, 6.19193 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk8"]
 position = Vector2( 608.216, 10.3495 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk8"]
 position = Vector2( 418.237, 13.0569 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk8"]
 position = Vector2( -329.534, 10.0469 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk8"]
 position = Vector2( -508.077, 8.98122 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk8"]
 position = Vector2( -135.711, 5.79883 )
 frames = SubResource( 1 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="Starfield_Chunk7" type="Node2D" parent="world/Starfield"]
@@ -326,54 +329,55 @@ position = Vector2( 1637.44, -161.791 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk7"]
 position = Vector2( 788.411, 12.1709 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk7"]
 position = Vector2( 980.052, 12.2944 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk7"]
 position = Vector2( 229.077, 7.99297 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk7"]
 position = Vector2( 43.7341, 6.19193 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk7"]
 position = Vector2( 608.216, 10.3495 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk7"]
 position = Vector2( 418.237, 13.0569 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk7"]
 position = Vector2( -329.534, 10.0469 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk7"]
 position = Vector2( -508.077, 8.98122 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk7"]
 position = Vector2( -135.711, 5.79883 )
 frames = SubResource( 1 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="Starfield_Chunk6" type="Node2D" parent="world/Starfield"]
@@ -382,54 +386,55 @@ position = Vector2( -1253.69, -158.057 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk6"]
 position = Vector2( 788.411, 12.1709 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk6"]
 position = Vector2( 980.052, 12.2944 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk6"]
 position = Vector2( 229.077, 7.99297 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk6"]
 position = Vector2( 43.7341, 6.19193 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk6"]
 position = Vector2( 608.216, 10.3495 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk6"]
 position = Vector2( 418.237, 13.0569 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk6"]
 position = Vector2( -329.534, 10.0469 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk6"]
 position = Vector2( -508.077, 8.98122 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk6"]
 position = Vector2( -135.711, 5.79883 )
 frames = SubResource( 1 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="Starfield_Chunk5" type="Node2D" parent="world/Starfield"]
@@ -438,48 +443,54 @@ position = Vector2( -2877.19, -169.215 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk5"]
 position = Vector2( 788.411, 12.1709 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk5"]
 position = Vector2( 980.052, 12.2944 )
 frames = SubResource( 1 )
-frame = 5
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk5"]
 position = Vector2( 229.077, 7.99297 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk5"]
 position = Vector2( 43.7341, 6.19193 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk5"]
 position = Vector2( 608.216, 10.3495 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk5"]
 position = Vector2( 418.237, 13.0569 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk5"]
 position = Vector2( -329.534, 10.0469 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk5"]
 position = Vector2( -508.077, 8.98122 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="world/Starfield/Starfield_Chunk5"]
 position = Vector2( -135.711, 5.79883 )
 frames = SubResource( 1 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="ground" type="StaticBody2D" parent="world"]

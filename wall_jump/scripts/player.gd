@@ -39,11 +39,11 @@ func _physics_process(delta):
     if second_cut_process_enabled:
         second_cut_process(delta)
 
-var acceleration_scale  = Vector2(5,  1)
-var acceleration_extent = Vector2(25, 100)
+var acceleration_scale  = Vector2(.5,  1)
+var acceleration_extent = Vector2(5, 100)
 var velocity_extent     = Vector2(500, 800)
 var gravity             = Vector2(0,125)
-var drag                = .5
+var drag                = .8
 
 var acceleration = Vector2.ZERO
 var velocity     = Vector2.ZERO
@@ -167,7 +167,16 @@ func second_cut_process(delta):
             $Node2D/AnimationPlayer.play("player_running")
         else:
             $Node2D/AnimationPlayer.play("player_standing")
-        
+     
+    if state_is_running:
+        $Node2D/AnimationPlayer.playback_speed = lerp(
+            0.5,
+            1.5,
+            abs(velocity.x) / 500
+        )
+        print(abs(velocity.x), ':', $Node2D/AnimationPlayer.playback_speed)
+        #$Node2D/AnimationPlayer.playback_speed = velocity.length()
+   
     # Update Position
     move_and_slide(velocity, Vector2(0, -1))
     
