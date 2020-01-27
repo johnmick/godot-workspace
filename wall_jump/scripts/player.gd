@@ -22,27 +22,28 @@ func _ready():
     data_file = File.new()
     data_file.open("user://player_data.dat", File.WRITE)    
 
-var max_jump_time = 1.5
+var max_jump_time = .65
 var jump_timer    = 0
 var jumping       = false
 var wall_jumped   = false
 var wall_jump_timer = 0
-var wall_jump_interval = .50
+var wall_jump_interval = .25
 
 var first_cut_process_enabled  = false
 var second_cut_process_enabled = true
 
-func _process(delta):
+func _physics_process(delta):
     if first_cut_process_enabled:
         first_cut_process(delta)
         
     if second_cut_process_enabled:
         second_cut_process(delta)
 
-var acceleration_scale  = Vector2(50,  1)
-var acceleration_extent = Vector2(1000, 100)
-var gravity             = Vector2(0,85)
-var drag                = .92
+var acceleration_scale  = Vector2(5,  1)
+var acceleration_extent = Vector2(25, 100)
+var velocity_extent     = Vector2(500, 800)
+var gravity             = Vector2(0,125)
+var drag                = .5
 
 var acceleration = Vector2.ZERO
 var velocity     = Vector2.ZERO
@@ -66,12 +67,13 @@ func second_cut_process(delta):
     time_alive += delta
     
     new_state = false
+    var apply_drag = true
     # Apply Reduced Acceleration due to Drag #################################################
     #acceleration = acceleration * drag
     if is_on_floor() == false:
-        acceleration = gravity
+        acceleration += gravity
     else:
-        acceleration = Vector2.ZERO
+        #acceleration += Vector2.ZERO
         if state_is_jumping:
             state_is_jumping = false
             new_state = true
@@ -83,12 +85,14 @@ func second_cut_process(delta):
     # Apply Added Acceleration from User Requests #################################################
     if Input.is_action_pressed("ui_left"):
         acceleration += acceleration_scale.x * Vector2(-1, 0)
+        apply_drag = false
         state_is_running = true
         new_state = true
         
     if Input.is_action_pressed("ui_right"):        
         acceleration += acceleration_scale.x * Vector2(1, 0)
         state_is_running = true
+        apply_drag = false
         new_state = true
     
 
@@ -105,17 +109,31 @@ func second_cut_process(delta):
         
     # Advance Velocity/Speed  #################################################                 
     velocity += acceleration
-    velocity.x  = velocity.x * drag
+    
+    if apply_drag:
+        velocity.x  = velocity.x * drag
+        acceleration.x = acceleration.x * drag
+
+    # Bound Max Velocity #################################################
+    if velocity.x > velocity_extent.x:
+        velocity.x = velocity_extent.x
+    elif velocity.x < -velocity_extent.x:
+        velocity.x = -velocity_extent.x        
+    if velocity.y > velocity_extent.y:
+        velocity.y = velocity_extent.y     
+    elif velocity.y < -velocity_extent.y:
+        velocity.y = -velocity_extent.y    
 
     # Jumps override bounding
     if state_is_jumping:
         if is_on_wall() and Input.is_action_just_pressed("jump") and not is_on_floor():
-            velocity.y = -2815
-            velocity.x *= -3
+            velocity.y = -3815
+            velocity.x *= -2
             jump_timer = 0
             state_just_wall_jumped = true
             new_state = true
             $jump_sound.play()
+            get_node("/root/main_scene/Camera2D").flash_pause()
             
         velocity.y = -315
         jump_timer += delta
@@ -129,7 +147,7 @@ func second_cut_process(delta):
         $Node2D/Sprite.flip_h = false
     
     
-    if abs(velocity.x) < 2:
+    if abs(velocity.x) < 20:
         state_is_running = false
         new_state = true
         
@@ -149,6 +167,7 @@ func second_cut_process(delta):
             $Node2D/AnimationPlayer.play("player_running")
         else:
             $Node2D/AnimationPlayer.play("player_standing")
+        
     # Update Position
     move_and_slide(velocity, Vector2(0, -1))
     

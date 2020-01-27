@@ -1,9 +1,11 @@
-[gd_resource type="Animation" load_steps=2 format=2]
+[gd_resource type="Animation" load_steps=3 format=2]
 
 [ext_resource path="res://textures/running.png" type="Texture" id=1]
+[ext_resource path="res://sounds/foot.wav" type="AudioStream" id=2]
 
 [resource]
 resource_name = "player_running"
+length = 0.5
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -12,7 +14,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0, 9 ]
@@ -52,4 +54,34 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../footstep_sound:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/keys = {
+"times": PoolRealArray( 0.180635, 0.2, 0.366584, 0.447218 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false, true ]
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("../footstep_sound")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0.18092, 0.446541 )
 }
