@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://textures/spin_jump.png" type="Texture" id=1]
+[ext_resource path="res://animations/player_running.tres" type="Animation" id=2]
+[ext_resource path="res://animations/player_spinjumping.tres" type="Animation" id=3]
+[ext_resource path="res://scripts/player.gd" type="Script" id=4]
+[ext_resource path="res://animations/player_standing.tres" type="Animation" id=5]
+[ext_resource path="res://animations/player_wall_jump_pose.tres" type="Animation" id=6]
+[ext_resource path="res://sounds/mouth_harp.wav" type="AudioStream" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 9.87436
+height = 23.2554
+
+[node name="player" type="KinematicBody2D"]
+script = ExtResource( 4 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+anims/player_running = ExtResource( 2 )
+anims/player_spinjumping = ExtResource( 3 )
+anims/player_standing = ExtResource( 5 )
+anims/player_wall_jump_pose = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+rotation = -0.640883
+texture = ExtResource( 1 )
+vframes = 9
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="jump_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )

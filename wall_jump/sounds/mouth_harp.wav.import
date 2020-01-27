@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mouth_harp.wav-8b806d6ff390d456336f38f7c1a28cda.sample"
+
+[deps]
+
+source_file="res://sounds/mouth_harp.wav"
+dest_files=[ "res://.import/mouth_harp.wav-8b806d6ff390d456336f38f7c1a28cda.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
