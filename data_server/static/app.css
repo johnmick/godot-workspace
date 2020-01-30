@@ -1,0 +1,8 @@
+html, body{
+  font-family: arial;
+}
+
+#graph {
+  width:800px;
+  height:600px;
+}

@@ -18,9 +18,12 @@ var data_to_write = {
     "position_y":     []
    }
 # Called when the node enters the scene tree for the first time.
+
+var socketUDP = PacketPeerUDP.new()
 func _ready():
     data_file = File.new()
-    data_file.open("user://player_data.dat", File.WRITE)    
+    data_file.open("user://player_data.dat", File.WRITE)
+    socketUDP.set_dest_address("127.0.0.1", 9999)
 
 var max_jump_time = .85
 var jump_timer    = 0
@@ -205,6 +208,16 @@ func second_cut_process(delta):
     data_to_write["position_y"].append(position.y)
     data_to_write["time"].append(time_alive)
     
+    socketUDP.put_packet(to_json({
+        "time": time_alive,
+        "acceleration_x": acceleration.x,
+        "acceleration_y": acceleration.y,
+        "velocity_x": velocity.x,
+        "velocity_y": velocity.y,
+        "position_x": position.x,
+        "position_y": position.y,
+    }).to_utf8())
+
     was_on_floor = is_on_floor()
     #var collision_object = move_and_collide(speed, true, true, true)
     #if collision_object and collision_object.collider.name != "ground":
