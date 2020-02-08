@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Camera2D.gd" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://textures/stars/space3.png" type="Texture" id=6]
 [ext_resource path="res://textures/stars/space6.png" type="Texture" id=7]
 [ext_resource path="res://textures/stars/space5.png" type="Texture" id=8]
+[ext_resource path="res://scripts/player2.gd" type="Script" id=9]
+[ext_resource path="res://scripts/net_debug_out.gd" type="Script" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -620,6 +622,16 @@ __meta__ = {
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 195.091, 53.2476 )
+script = ExtResource( 9 )
 
 [node name="test_area" type="Node2D" parent="."]
 position = Vector2( -290.421, -183.117 )
+
+[node name="net_debug_out" type="Node" parent="."]
+script = ExtResource( 10 )
+dest_address = "127.0.0.1"
+dest_port = 9999
+targets = {
+NodePath("../player"): [ "position", "velocity", "acceleration" ],
+NodePath("../Camera2D"): [ "position" ]
+}

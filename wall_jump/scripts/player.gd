@@ -21,8 +21,8 @@ var data_to_write = {
 
 var socketUDP = PacketPeerUDP.new()
 func _ready():
-    data_file = File.new()
-    data_file.open("user://player_data.dat", File.WRITE)
+    #data_file = File.new()
+    #data_file.open("user://player_data.dat", File.WRITE)
     socketUDP.set_dest_address("127.0.0.1", 9999)
 
 var max_jump_time = .85
@@ -33,7 +33,8 @@ var wall_jump_timer = 0
 var wall_jump_interval = .2
 
 var first_cut_process_enabled  = false
-var second_cut_process_enabled = true
+var second_cut_process_enabled = false
+var third_cut_process_enabled = true
 
 func _physics_process(delta):
     if first_cut_process_enabled:
@@ -41,6 +42,13 @@ func _physics_process(delta):
         
     if second_cut_process_enabled:
         second_cut_process(delta)
+        
+    if third_cut_process_enabled:
+        third_cut_process(delta)
+        
+
+func third_cut_process(_delta):
+    pass
 
 # running state
 #var acceleration_scale  = Vector2(0.5,  1)
@@ -48,10 +56,10 @@ func _physics_process(delta):
 #var velocity_extent     = Vector2(600, 800)
 
 # walking state
-var acceleration_scale  = Vector2(5,  1)
-var acceleration_extent = Vector2(25, 100)
+var acceleration_scale  = Vector2(5,  100)
+var acceleration_extent = Vector2(25, 1000)
 var velocity_extent     = Vector2(600, 800)
-var gravity             = Vector2(0,0)
+var gravity             = Vector2(0,10)
 var drag                = .85
 
 var acceleration = Vector2.ZERO
@@ -66,8 +74,8 @@ var new_state        = false
 
 func _notification(what):
     if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
-        data_file.store_line(to_json(data_to_write))
-        data_file.close()
+        #data_file.store_line(to_json(data_to_write))
+        #data_file.close()
         get_tree().quit() # default behavior
         
 
@@ -87,18 +95,19 @@ func second_cut_process(delta):
             new_state = true
             
         if Input.is_action_just_pressed("jump") and not state_is_jumping:
+            acceleration = acceleration_scale.y * Vector2(0, -1)
             state_is_jumping = true     
             new_state  = true   
     
     # Apply Added Acceleration from User Requests #################################################
     if Input.is_action_pressed("ui_left"):
-        acceleration += acceleration_scale.x * Vector2(-1, 0)
+        acceleration.x += acceleration_scale.x * -1
         apply_drag = false
         state_is_running = true
         new_state = true
         
     if Input.is_action_pressed("ui_right"):        
-        acceleration += acceleration_scale.x * Vector2(1, 0)
+        acceleration.x += acceleration_scale.x
         state_is_running = true
         apply_drag = false
         new_state = true
@@ -139,10 +148,9 @@ func second_cut_process(delta):
     # Jumps override bounding
     if state_is_jumping:
         if is_on_wall() and Input.is_action_just_pressed("jump") and not is_on_floor():
-            velocity.y = -3815
+            acceleration.y = -3815
             velocity.x = 600 * (1 if velocity.x < 0 else -1)
             acceleration.x = 0
-            acceleration.y = 0
             jump_timer = 0
             state_just_wall_jumped = true
             new_state = true
@@ -191,15 +199,17 @@ func second_cut_process(delta):
             0.75,
             abs(velocity.x) / 300
         )
-        print(abs(velocity.x), ':', $Node2D/AnimationPlayer.playback_speed)
+        #print(abs(velocity.x), ':', $Node2D/AnimationPlayer.playback_speed)
         #$Node2D/AnimationPlayer.playback_speed = velocity.length()
    
     # Update Position
-    if is_on_floor() and was_on_floor:
-        velocity.y = 0
-        acceleration.y = 0
+    #if is_on_floor() and was_on_floor:
+    #    velocity.y = 0
+    #    acceleration.y = 0
+    #warning-ignore:return_value_discarded
     move_and_slide(velocity, Vector2(0, -1))
     
+    #print(acceleration)
     data_to_write["acceleration_x"].append(acceleration.x)
     data_to_write["acceleration_y"].append(acceleration.y)
     data_to_write["velocity_x"].append(velocity.x)
@@ -284,4 +294,5 @@ func first_cut_process(delta):
     movement += Vector2(0, 5) * SPEED * delta
     
     movement = Vector2(int(movement.x), int(movement.y))    
+    #warning-ignore:return_value_discarded
     move_and_slide(movement, Vector2(0, -1))
